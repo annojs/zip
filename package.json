@@ -10,7 +10,9 @@
   },
   "devDependencies": {
     "require-dir": "0.1.0",
-    "annofuzz": "0.2.0"
+    "annofuzz": "0.3.0",
+    "annogenerate": "0.6.2",
+    "funkit": "~0.7.7"
   },
   "scripts": {
     "test": "node ./tests"
