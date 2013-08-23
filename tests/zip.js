@@ -11,18 +11,14 @@ var zip = require('../');
 
 fuzz._amount = 100;
 fuzz(zip, function(op, a, b) {
-    var res, matches;
-
     if(!is.defined(b)) {
         a = keys(a);
         b = values(a);
     }
 
-    res = op(a, b);
+    var res = op(a, b);
 
-    matches = res.filter(function(v, i) {
+    return res.filter(function(v, i) {
         return equals(v[0], a[i]) && equals(v[1], b[i]);
-    });
-
-    return matches.length == res.length;
+    }).length == res.length;
 });
