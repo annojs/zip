@@ -10,8 +10,10 @@ var a = [0, 1, 2];
 var b = ['a', 'b', 'c', 'd'];
 var c = zip(a, b); // [[0, 'a'], [1, 'b'], [2, 'c']]
 
-var o = {name: 'Joe', age: 123};
+var o = {name: 'Joe', age: 123}
 var ozip = zip(o); // [['name', 'Joe'], ['age', 123]]
+
+var o2 = zip.toObject(ozip); // {name: 'Joe', age: 123}
 ```
 
 ## License
