@@ -1,3 +1,5 @@
+'use strict';
+
 var generate = require('annogenerate');
 
 generate.isZip = function() {
@@ -5,16 +7,15 @@ generate.isZip = function() {
 };
 
 var fuzz = require('annofuzz')(generate);
-var funkit = require('funkit');
-var equals = funkit.ops.equals;
+var deepeq = require('annoops').deepeq;
 
 var zip = require('../');
 
 
-fuzz._amount = 100;
 fuzz(zip.toObject, function(op, a) {
     var res = op(a);
+
     return a.filter(function(v) {
-        return equals(res[v[0]], v[1]);
-    }).length == a.length;
-});
+        return deepeq(res[v[0]], v[1]);
+    }).length === a.length;
+}, 100);

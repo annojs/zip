@@ -4,14 +4,15 @@
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
   "version": "0.2.1",
   "dependencies": {
-    "funkit": "0.7.7",
     "annois": "0.3.0",
-    "annotate": "0.7.0"
+    "annotate": "0.9.0",
+    "annofp": "~0.2.2"
   },
   "devDependencies": {
     "require-dir": "0.1.0",
-    "annofuzz": "0.3.0",
-    "annogenerate": "0.6.2"
+    "annofuzz": "0.4.6",
+    "annogenerate": "0.7.2",
+    "annoops": "~0.2.0"
   },
   "scripts": {
     "test": "node ./tests"

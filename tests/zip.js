@@ -1,24 +1,21 @@
+'use strict';
+
 var generate = require('annogenerate');
 var fuzz = require('annofuzz')(generate);
-var is = require('annois');
-var funkit = require('funkit');
-var equals = funkit.ops.equals;
-var keys = funkit.object.keys;
-var values = funkit.object.values;
+var deepeq = require('annoops').deepeq;
 
 var zip = require('../');
 
 
-fuzz._amount = 100;
-fuzz(zip, function(op, a, b) {
-    if(!is.defined(b)) {
-        a = keys(a);
-        b = values(a);
-    }
-
+// two arrays
+fuzz(zip, function(op) {
+    var a = generate.array();
+    var b = generate.array();
     var res = op(a, b);
 
     return res.filter(function(v, i) {
-        return equals(v[0], a[i]) && equals(v[1], b[i]);
-    }).length == res.length;
-});
+        return deepeq(v[0], a[i]) && deepeq(v[1], b[i]);
+    }).length === res.length;
+}, 100);
+
+// TODO: figure out a nice invariant for generalized case!!!
