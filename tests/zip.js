@@ -1,5 +1,7 @@
 'use strict';
 
+var assert = require('assert');
+
 var generate = require('annogenerate');
 var fuzz = require('annofuzz')(generate);
 var deepeq = require('annoops').deepeq;
@@ -17,5 +19,7 @@ fuzz(zip, function(op) {
         return deepeq(v[0], a[i]) && deepeq(v[1], b[i]);
     }).length === res.length;
 }, 100);
+
+assert(deepeq(zip({name: 'Joe', age: 123}), [['name', 'Joe'], ['age', 123]]));
 
 // TODO: figure out a nice invariant for generalized case!!!
