@@ -5,8 +5,7 @@
   "version": "0.2.3",
   "dependencies": {
     "annois": "0.3.0",
-    "annotate": "0.9.0",
-    "annofp": "~0.2.2"
+    "annotate": "0.9.0"
   },
   "devDependencies": {
     "require-dir": "0.1.0",
