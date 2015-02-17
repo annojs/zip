@@ -2,7 +2,7 @@
   "name": "annozip",
   "description": "Zips data into structure",
   "author": "Juho Vepsalainen <bebraw@gmail.com>",
-  "version": "0.2.4",
+  "version": "0.2.5",
   "dependencies": {
     "annois": "^0.3.1",
     "annotate": "^0.9.1"
